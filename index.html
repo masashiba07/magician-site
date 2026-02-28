@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マジックまぁちゃん | Magic Maachan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 星のキャンバス -->
+  <canvas id="starfield"></canvas>
+
+  <!-- パーティクルエフェクト -->
+  <div id="particles"></div>
+
+  <!-- ナビゲーション -->
+  <nav class="navbar">
+    <div class="nav-logo">✨ まぁちゃん</div>
+    <ul class="nav-links">
+      <li><a href="#home">ホーム</a></li>
+      <li><a href="#about">プロフィール</a></li>
+      <li><a href="#shows">ショー</a></li>
+      <li><a href="#gallery">ギャラリー</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </nav>
+
+  <!-- ヒーローセクション -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="floating-cards">
+      <div class="card-float card-1">🃏</div>
+      <div class="card-float card-2">♠</div>
+      <div class="card-float card-3">♦</div>
+      <div class="card-float card-4">🎩</div>
+      <div class="card-float card-5">⭐</div>
+      <div class="card-float card-6">🌟</div>
+    </div>
+    <div class="hero-content">
+      <div class="wand-line"></div>
+      <p class="hero-sub">〜 夢と驚きをお届けする 〜</p>
+      <h1 class="hero-title">
+        <span class="title-magic">マジック</span>
+        <span class="title-name">まぁちゃん</span>
+      </h1>
+      <p class="hero-tagline">あなたの目の前で<span class="highlight">奇跡</span>が起きる</p>
+      <div class="hero-buttons">
+        <a href="#shows" class="btn btn-primary">
+          <span class="btn-icon">🎩</span> ショーを見る
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <span class="btn-icon">✉</span> お問い合わせ
+        </a>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+        <span>スクロール</span>
+      </div>
+    </div>
+    <div class="hero-magic-circle">
+      <div class="magic-ring ring-1"></div>
+      <div class="magic-ring ring-2"></div>
+      <div class="magic-ring ring-3"></div>
+    </div>
+  </section>
+
+  <!-- プロフィールセクション -->
+  <section id="about" class="about">
+    <div class="section-header">
+      <div class="section-line"></div>
+      <h2 class="section-title"><span>✦</span> プロフィール <span>✦</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-container">
+      <div class="about-image-wrapper">
+        <div class="magician-silhouette">
+          <div class="silhouette-glow"></div>
+          <div class="hat-icon">🎩</div>
+          <div class="wand-icon">🪄</div>
+          <div class="sparkle-ring">
+            <div class="sp sp1">✦</div>
+            <div class="sp sp2">✧</div>
+            <div class="sp sp3">✦</div>
+            <div class="sp sp4">✧</div>
+            <div class="sp sp5">✦</div>
+            <div class="sp sp6">✧</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3 class="about-name">マジックまぁちゃん</h3>
+        <p class="about-desc">
+          こんにちは！マジックまぁちゃんです。<br>
+          子どもから大人まで、みんなを笑顔にする
+          プロマジシャンとして活動しています。
+        </p>
+        <p class="about-desc">
+          カードマジック・コインマジック・メンタルマジックなど
+          幅広いジャンルのマジックをお届けします。
+          あなたの大切なイベントを、忘れられない思い出に！
+        </p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🎪</div>
+            <div class="stat-num" data-target="500">0</div>
+            <div class="stat-label">公演回数</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">😊</div>
+            <div class="stat-num" data-target="10000">0</div>
+            <div class="stat-label">感動させた人数</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-num" data-target="15">0</div>
+            <div class="stat-label">受賞歴</div>
+          </div>
+        </div>
+        <div class="skills">
+          <div class="skill-item">
+            <span class="skill-name">🃏 カードマジック</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">🪙 コインマジック</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">🧠 メンタルマジック</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">🎭 ステージマジック</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ショーセクション -->
+  <section id="shows" class="shows">
+    <div class="section-header">
+      <div class="section-line"></div>
+      <h2 class="section-title"><span>✦</span> ショー &amp; サービス <span>✦</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="shows-grid">
+      <div class="show-card">
+        <div class="show-card-inner">
+          <div class="show-front">
+            <div class="show-emoji">🎪</div>
+            <h3>パーティーマジック</h3>
+            <p>誕生日・結婚式・企業イベントなど、各種パーティーにお伺いします</p>
+          </div>
+          <div class="show-back">
+            <h3>パーティーマジック</h3>
+            <ul>
+              <li>✦ 所要時間：30〜90分</li>
+              <li>✦ 人数：〜100名</li>
+              <li>✦ クロースアップ対応</li>
+              <li>✦ ステージ対応</li>
+            </ul>
+            <a href="#contact" class="show-btn">予約する</a>
+          </div>
+        </div>
+      </div>
+      <div class="show-card featured">
+        <div class="show-badge">人気No.1</div>
+        <div class="show-card-inner">
+          <div class="show-front">
+            <div class="show-emoji">🏫</div>
+            <h3>学校・保育園ショー</h3>
+            <p>子どもたちの笑顔を引き出す、楽しく教育的なマジックショー</p>
+          </div>
+          <div class="show-back">
+            <h3>学校・保育園ショー</h3>
+            <ul>
+              <li>✦ 所要時間：45〜60分</li>
+              <li>✦ 人数：無制限</li>
+              <li>✦ 参加型マジック</li>
+              <li>✦ 安全素材使用</li>
+            </ul>
+            <a href="#contact" class="show-btn">予約する</a>
+          </div>
+        </div>
+      </div>
+      <div class="show-card">
+        <div class="show-card-inner">
+          <div class="show-front">
+            <div class="show-emoji">🏢</div>
+            <h3>企業イベント</h3>
+            <p>社内パーティー・展示会・懇親会など、ビジネスシーンにも対応</p>
+          </div>
+          <div class="show-back">
+            <h3>企業イベント</h3>
+            <ul>
+              <li>✦ 所要時間：15〜120分</li>
+              <li>✦ 人数：〜500名</li>
+              <li>✦ 商品PRマジック</li>
+              <li>✦ 多言語対応可</li>
+            </ul>
+            <a href="#contact" class="show-btn">予約する</a>
+          </div>
+        </div>
+      </div>
+      <div class="show-card">
+        <div class="show-card-inner">
+          <div class="show-front">
+            <div class="show-emoji">📺</div>
+            <h3>メディア出演</h3>
+            <p>TV・YouTube・SNS撮影など、各種メディアにも対応いたします</p>
+          </div>
+          <div class="show-back">
+            <h3>メディア出演</h3>
+            <ul>
+              <li>✦ TV番組出演</li>
+              <li>✦ YouTube企画</li>
+              <li>✦ SNSコンテンツ</li>
+              <li>✦ CM・広告撮影</li>
+            </ul>
+            <a href="#contact" class="show-btn">問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ギャラリーセクション -->
+  <section id="gallery" class="gallery">
+    <div class="section-header">
+      <div class="section-line"></div>
+      <h2 class="section-title"><span>✦</span> ギャラリー <span>✦</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gi-1">
+        <div class="gallery-overlay">
+          <span>🃏 カードマジック</span>
+        </div>
+        <div class="gallery-bg">
+          <div class="card-art">🂡🂱🃁🃑</div>
+        </div>
+      </div>
+      <div class="gallery-item gi-2">
+        <div class="gallery-overlay">
+          <span>🎩 帽子マジック</span>
+        </div>
+        <div class="gallery-bg">
+          <div class="card-art" style="font-size:4em">🎩</div>
+        </div>
+      </div>
+      <div class="gallery-item gi-3">
+        <div class="gallery-overlay">
+          <span>🪙 コインマジック</span>
+        </div>
+        <div class="gallery-bg">
+          <div class="card-art">🪙🪙🪙</div>
+        </div>
+      </div>
+      <div class="gallery-item gi-4">
+        <div class="gallery-overlay">
+          <span>🌹 ロープマジック</span>
+        </div>
+        <div class="gallery-bg">
+          <div class="card-art" style="font-size:3em">🌹✂🌹</div>
+        </div>
+      </div>
+      <div class="gallery-item gi-5">
+        <div class="gallery-overlay">
+          <span>🎭 ステージショー</span>
+        </div>
+        <div class="gallery-bg">
+          <div class="card-art" style="font-size:3.5em">🎭</div>
+        </div>
+      </div>
+      <div class="gallery-item gi-6">
+        <div class="gallery-overlay">
+          <span>🔮 水晶マジック</span>
+        </div>
+        <div class="gallery-bg">
+          <div class="card-art" style="font-size:3.5em">🔮</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section class="testimonials">
+    <div class="section-header">
+      <div class="section-line"></div>
+      <h2 class="section-title"><span>✦</span> お客様の声 <span>✦</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="testimonials-track">
+      <div class="testimonial-card">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p>「子供の誕生日に来てもらいました！子どもたちが大興奮で、本当に最高でした！」</p>
+        <div class="t-author">— 田中さま（誕生日パーティー）</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p>「社内パーティーで盛り上げてもらいました。大人も子供も楽しめて大満足です！」</p>
+        <div class="t-author">— 鈴木さま（企業イベント）</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p>「保育園のお楽しみ会に来ていただきました。子どもたちの目が輝いていました！」</p>
+        <div class="t-author">— 佐藤さま（保育園）</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p>「結婚式で演じてもらいました。ゲストみんなが感動して涙が出るほどでした！」</p>
+        <div class="t-author">— 山田さま（結婚式）</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="contact">
+    <div class="contact-bg"></div>
+    <div class="section-header">
+      <div class="section-line"></div>
+      <h2 class="section-title"><span>✦</span> お問い合わせ <span>✦</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>ご予約・ご相談</h3>
+        <p>イベントの詳細やご予算に合わせて柔軟に対応いたします。<br>お気軽にお問い合わせください！</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="c-icon">📧</div>
+            <div>
+              <div class="c-label">メール</div>
+              <div class="c-value">magic@maachan.jp</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">📱</div>
+            <div>
+              <div class="c-label">電話</div>
+              <div class="c-value">080-XXXX-XXXX</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">📍</div>
+            <div>
+              <div class="c-label">活動エリア</div>
+              <div class="c-value">全国対応（関東中心）</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a class="social-btn" href="#">📘 Facebook</a>
+          <a class="social-btn" href="#">📷 Instagram</a>
+          <a class="social-btn" href="#">▶ YouTube</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label>お名前 <span class="required">*</span></label>
+          <input type="text" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label>メールアドレス <span class="required">*</span></label>
+          <input type="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>イベント種類</label>
+          <select>
+            <option value="">選択してください</option>
+            <option>誕生日パーティー</option>
+            <option>企業イベント</option>
+            <option>学校・保育園</option>
+            <option>結婚式</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>メッセージ <span class="required">*</span></label>
+          <textarea rows="4" placeholder="ご予算・日程・場所などをお知らせください" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span class="btn-icon">✨</span> 送信する
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-magic">
+      <div class="footer-stars">✦ ✧ ✦ ✧ ✦</div>
+      <div class="footer-logo">🎩 マジックまぁちゃん</div>
+      <p>夢と驚きを届けるプロマジシャン</p>
+      <p class="footer-copy">© 2026 Magic Maachan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
